@@ -17,7 +17,13 @@ function Person(first, last, age, gender, interests){
     this.gender = gender;
     this.interests = interests;
     this.bio = function(){
-        console.log(`Hello, my name is ${this.name.first} ${this.name.last}, I'm ${this.age} years old and I like ${this.interests}!`);
+        let personBio = `Hello, my name is ${this.name.first} ${this.name.last}, I'm ${this.age} years old and I like `;
+        for(let i=1; i<this.interests.length;i++)
+        {
+            personBio = personBio.concat(`${this.interests[i-1]}, `)
+        }
+        personBio = personBio.concat(`and ${this.interests[this.interests.length-1]}!`)
+        console.log(personBio);
     };
     this.greeting = function(){
         console.log(`Hello, my name is ${this.name.first} ${this.name.last}.`);
@@ -25,9 +31,9 @@ function Person(first, last, age, gender, interests){
 }
 
 
-var person1 = new Person("Curtis", "Hatter", 27, 'M', "Coding");
+var person1 = new Person("Curtis", "Hatter", 27, 'M', ["Coding", "Video Games", "Movies"]);
 // var person2 = new Person("Savannah");
-console.log(person1.name);
+// console.log(person1.name);
 person1.bio();
-person1.greeting();
+// person1.greeting();
 
