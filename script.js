@@ -137,3 +137,6 @@ console.log('3');
 // behind the scenes: setTimeout waits 1 sec then will push the callback (what to do once it is done). The call back is log(2)
 // the callback sets a que that waits for the eventLoop to respond against the call stack waiting till the call stack is empty to 
 // then push the call back que onto the call stack
+
+
+
